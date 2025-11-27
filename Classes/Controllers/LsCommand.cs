@@ -1,8 +1,9 @@
-namespace _11_27_csharp_basic_gruppe_oppgave_4;
-
-public class LsCommand()
+namespace _11_27_csharp_basic_gruppe_oppgave_4
 {
-    public void ls()
+
+public class LsCommand
+{
+    public void ls(string [] newArgs)
     {
         string path = Environment.CurrentDirectory;
         string[] files = Directory.GetFiles(path);
@@ -11,4 +12,5 @@ public class LsCommand()
             Console.WriteLine(Path.GetFileName(file));
         }
     }
+} 
 }
