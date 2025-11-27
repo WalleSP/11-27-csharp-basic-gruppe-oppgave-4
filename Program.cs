@@ -8,7 +8,7 @@ class Program
 
         TouchCommand touchCommand = new TouchCommand();
 
-        switch (args[0]) 
+        switch (args[0])
         {
             case "touch":
                 touchCommand.Touch(args[1]);
