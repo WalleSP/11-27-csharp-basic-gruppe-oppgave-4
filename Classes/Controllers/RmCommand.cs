@@ -4,6 +4,14 @@ public static class RmCommand
 {
     public static void Rm(string fileName)
     {
-        File.Delete(fileName);
+        var file = Path.Combine(Directory.GetCurrentDirectory(), fileName);
+        if (File.Exists(file))
+        {
+            File.Delete(file);
+        }
+        else
+        {
+            Console.WriteLine($"There is no file with the name {fileName} ");
+        }
     }
 }
