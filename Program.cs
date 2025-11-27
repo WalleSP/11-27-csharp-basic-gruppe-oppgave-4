@@ -8,6 +8,7 @@ class Program
 
         TouchCommand touchCommand = new TouchCommand();
         PwdCommand pwdCommand = new PwdCommand();
+        CatCommand catCommand = new CatCommand();
 
         switch (args[0])
         {
@@ -17,6 +18,10 @@ class Program
 
             case "pwd":
                 PwdCommand.Pwd();
+                break;
+            
+            case "cat":
+                catCommand.Cat(args[1]);
                 break;
 
             default:
