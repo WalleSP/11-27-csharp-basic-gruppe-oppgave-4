@@ -1,31 +1,111 @@
-﻿namespace _11_27_csharp_basic_gruppe_oppgave_4;
-
-class Program
+﻿namespace _11_27_csharp_basic_gruppe_oppgave_4
 {
-    static void Main(string[] args)
+    class Program
     {
-        Console.WriteLine("Hello, World!");
-
-        TouchCommand touchCommand = new TouchCommand();
-        PwdCommand pwdCommand = new PwdCommand();
-        CatCommand catCommand = new CatCommand();
-
-        switch (args[0])
+        static void Main(string[] args)
         {
-            case "touch":
-                touchCommand.Touch(args[1]);
-                break;
-
-            case "pwd":
-                PwdCommand.Pwd();
-                break;
             
-            case "cat":
-                catCommand.Cat(args[1]);
-                break;
+            TouchCommand touchCommand = new TouchCommand();
+            LsCommand lsCommand = new LsCommand();
+            CatCommand catCommand = new CatCommand();
+            WcCommand wcCommand = new WcCommand();
 
-            default:
-                return;
+            bool exitFlag = false;
+
+            while (!exitFlag)
+            {
+                Console.Write("> ");
+                string? input = Console.ReadLine();
+
+                // 1. Input Validation and Early Exit
+                if (string.IsNullOrWhiteSpace(input))
+                {
+                    continue;
+                }
+
+                string[] newArgs = input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+                string command = newArgs[0].ToLower();
+
+                if (command == "exit")
+                {
+                    exitFlag = true;
+                    continue; // exit the loop
+                }
+                
+                ProcessCommand(newArgs, touchCommand, lsCommand, catCommand, wcCommand);
+            }
+        }
+        
+        
+        static void ProcessCommand(
+            string[] newArgs,
+            TouchCommand touchCommand,
+            LsCommand lsCommand,
+            CatCommand catCommand,
+            WcCommand wcCommand)
+        {
+            string command = newArgs[0].ToLower(); 
+
+            switch (command)
+            {
+                case "touch":
+                    if (newArgs.Length > 1)
+                    {
+                        touchCommand.Touch(newArgs[1]);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error: touch requires a file path.");
+                    }
+                    break;
+
+                case "pwd":
+                    
+                    PwdCommand.Pwd(); 
+                    break;
+
+                case "ls":
+                    lsCommand.ls(newArgs);
+                    break;
+                    
+                case "cat":
+                    if (newArgs.Length > 1)
+                    {
+                        catCommand.Cat(newArgs[1]);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error: cat requires a file path.");
+                    }
+                    break;
+
+                case "rm":
+                    if (newArgs.Length > 1)
+                    {
+                        
+                        RmCommand.Rm(newArgs[1]);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error: rm requires a file path.");
+                    }
+                    break;
+
+                case "wc":
+                    if (newArgs.Length > 1)
+                    {
+                        wcCommand.Wc(newArgs[1]);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error: wc requires a file path.");
+                    }
+                    break;
+
+                default:
+                    Console.WriteLine($"Unknown command: {command}");
+                    break;
+            }
         }
     }
 }
