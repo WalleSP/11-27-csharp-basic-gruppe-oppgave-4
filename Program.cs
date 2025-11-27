@@ -14,7 +14,7 @@ class Program
             case "touch":
                 touchCommand.Touch(args[1]);
                 break;
-            
+
             case "pwd":
                 PwdCommand.Pwd();
                 break;
