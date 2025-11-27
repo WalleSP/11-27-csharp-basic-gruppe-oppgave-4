@@ -7,11 +7,16 @@ class Program
         Console.WriteLine("Hello, World!");
 
         TouchCommand touchCommand = new TouchCommand();
+        PwdCommand pwdCommand = new PwdCommand();
 
         switch (args[0])
         {
             case "touch":
                 touchCommand.Touch(args[1]);
+                break;
+            
+            case "pwd":
+                PwdCommand.Pwd();
                 break;
 
             default:
