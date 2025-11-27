@@ -5,6 +5,13 @@ public class TouchCommand
 {
     public void Touch(string filePath)
     {
-        File.Create(filePath);
+        if (File.Exists(filePath))
+        {
+            Console.WriteLine("File already Exists");
+        }
+        else
+        {
+            File.Create(filePath);
+        }
     }
 }
