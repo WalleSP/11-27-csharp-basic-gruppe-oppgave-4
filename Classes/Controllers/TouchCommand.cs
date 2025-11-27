@@ -3,13 +3,20 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
 
 
 /// <summary>
-/// Simple Touch command from UNIX
+/// Touch command from UNIX that creates a new file.
 /// </summary>
 public class TouchCommand
 {
     public void Touch(string filePath)
     {
-        File.Create(filePath);
+        if (File.Exists(filePath))
+        {
+            Console.WriteLine("File already Exists");
+        }
+        else
+        {
+            File.Create(filePath);
+        }
     }
 }
 }
