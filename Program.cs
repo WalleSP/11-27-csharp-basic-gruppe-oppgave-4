@@ -1,62 +1,111 @@
 ﻿namespace _11_27_csharp_basic_gruppe_oppgave_4
-{ 
+{
     class Program
     {
         static void Main(string[] args)
         {
-          bool exitFlag = false;
+            
+            TouchCommand touchCommand = new TouchCommand();
+            LsCommand lsCommand = new LsCommand();
+            CatCommand catCommand = new CatCommand();
+            WcCommand wcCommand = new WcCommand();
 
-          TouchCommand touchCommand = new TouchCommand();
-          LsCommand lsCommand = new LsCommand();
-          PwdCommand pwdCommand = new PwdCommand();
-          
-          while (!exitFlag)
-          {
-          
-            Console.Write("> ");
-          string? input = Console.ReadLine();
-          string[] newArgs = input!.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+            bool exitFlag = false;
 
-          
-          if (newArgs.Length == 0) continue; 
-
-          
-          if (newArgs[0].ToLower() == "exit")
-          {
-              break; 
-          }
-
-            if (newArgs.Length > 0)
+            while (!exitFlag)
             {
-                
-                switch (newArgs[0].ToLower())
-                {
-                    case "touch":
-                        if (newArgs.Length > 1)
-                        {
-                            
-                            touchCommand.Touch(newArgs[1]); 
-                        }
-                        else
-                        {
-                            Console.WriteLine("Error: touch requires a file path.");
-                        }
-                        break;
-                    case "pwd":
-                        
-                        pwdCommand.pwd(); 
-                        break;
-                    case "ls":
-                        
-                        lsCommand.ls(newArgs);
-                        break;
+                Console.Write("> ");
+                string? input = Console.ReadLine();
 
-                    default:
-                        Console.WriteLine($"Unknown command: {newArgs[0]}");
-                        break;
+                // 1. Input Validation and Early Exit
+                if (string.IsNullOrWhiteSpace(input))
+                {
+                    continue;
                 }
+
+                string[] newArgs = input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+                string command = newArgs[0].ToLower();
+
+                if (command == "exit")
+                {
+                    exitFlag = true;
+                    continue; // exit the loop
+                }
+                
+                ProcessCommand(newArgs, touchCommand, lsCommand, catCommand, wcCommand);
             }
         }
-      }
+        
+        
+        static void ProcessCommand(
+            string[] newArgs,
+            TouchCommand touchCommand,
+            LsCommand lsCommand,
+            CatCommand catCommand,
+            WcCommand wcCommand)
+        {
+            string command = newArgs[0].ToLower(); 
+
+            switch (command)
+            {
+                case "touch":
+                    if (newArgs.Length > 1)
+                    {
+                        touchCommand.Touch(newArgs[1]);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error: touch requires a file path.");
+                    }
+                    break;
+
+                case "pwd":
+                    
+                    PwdCommand.Pwd(); 
+                    break;
+
+                case "ls":
+                    lsCommand.ls(newArgs);
+                    break;
+                    
+                case "cat":
+                    if (newArgs.Length > 1)
+                    {
+                        catCommand.Cat(newArgs[1]);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error: cat requires a file path.");
+                    }
+                    break;
+
+                case "rm":
+                    if (newArgs.Length > 1)
+                    {
+                        
+                        RmCommand.Rm(newArgs[1]);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error: rm requires a file path.");
+                    }
+                    break;
+
+                case "wc":
+                    if (newArgs.Length > 1)
+                    {
+                        wcCommand.Wc(newArgs[1]);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error: wc requires a file path.");
+                    }
+                    break;
+
+                default:
+                    Console.WriteLine($"Unknown command: {command}");
+                    break;
+            }
+        }
     }
 }
