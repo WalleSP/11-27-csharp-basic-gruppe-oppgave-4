@@ -1,4 +1,6 @@
-﻿//// <summary>
+﻿using Spectre.Console;
+
+/// <summary>
 //// Main program file that handles user input and command execution.
 //// </summary>
 
@@ -8,14 +10,28 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
     {
         static void Main(string[] args)
         {
+            AnsiConsole.WriteLine("___________________________________________________");
+            AnsiConsole.WriteLine();
+            AnsiConsole.WriteLine("help:    Shows this menu");
+            AnsiConsole.WriteLine("pwd:     Shows your current path");
+            AnsiConsole.WriteLine("ls:      Shows all the files in your current Directory");
+            AnsiConsole.WriteLine(
+                "echo:    Return your text in the terminal or writes your text into an fil"
+            );
+            AnsiConsole.WriteLine("cat:     Display the conntent of an file");
+            AnsiConsole.WriteLine("touch:   Create an file");
+            AnsiConsole.WriteLine("rm:      Delete an file");
+            AnsiConsole.WriteLine("exit:    Exit the program");
+            AnsiConsole.WriteLine("___________________________________________________");
+            AnsiConsole.WriteLine();
+            AnsiConsole.WriteLine("Choose one of the option abow");
+            AnsiConsole.WriteLine();
+
             TouchCommand touchCommand = new TouchCommand();
             LsCommand lsCommand = new LsCommand();
             CatCommand catCommand = new CatCommand();
             WcCommand wcCommand = new WcCommand();
-<<<<<<< HEAD
             CpCommand cpCommand = new CpCommand();
-=======
->>>>>>> 41d38ef10126782a6f44076f58ab4eb543001927
 
             bool exitFlag = false;
 
@@ -38,30 +54,18 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
                     exitFlag = true;
                     continue; // exit the loop
                 }
-<<<<<<< HEAD
 
                 ProcessCommand(newArgs, touchCommand, lsCommand, catCommand, wcCommand, cpCommand);
             }
         }
 
-=======
-                ProcessCommand(newArgs, touchCommand, lsCommand, catCommand, wcCommand);
-            }
-        }
-
-        //Made this to reduce indentation in Main method
->>>>>>> 41d38ef10126782a6f44076f58ab4eb543001927
         static void ProcessCommand(
             string[] newArgs,
             TouchCommand touchCommand,
             LsCommand lsCommand,
             CatCommand catCommand,
-<<<<<<< HEAD
             WcCommand wcCommand,
             CpCommand cpCommand
-=======
-            WcCommand wcCommand
->>>>>>> 41d38ef10126782a6f44076f58ab4eb543001927
         )
         {
             string command = newArgs[0].ToLower();
@@ -88,13 +92,10 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
                     lsCommand.ls(newArgs);
                     break;
 
-<<<<<<< HEAD
                 case "cp":
                     cpCommand.cp(newArgs[1], newArgs[2]);
                     break;
 
-=======
->>>>>>> 41d38ef10126782a6f44076f58ab4eb543001927
                 case "cat":
                     if (newArgs.Length > 1)
                     {
