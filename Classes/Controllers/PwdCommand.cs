@@ -1,15 +1,13 @@
 namespace _11_27_csharp_basic_gruppe_oppgave_4
 {
-
-
-// Pwd command
-public class PwdCommand
-{
-    public static void Pwd()
+    // Pwd command
+    public class PwdCommand
     {
-        var path = Environment.CurrentDirectory;
+        public static void Pwd()
+        {
+            var path = Environment.CurrentDirectory;
 
-        Console.WriteLine(path);
+            Console.WriteLine(path);
+        }
     }
-}
 }
