@@ -1,4 +1,8 @@
-﻿namespace _11_27_csharp_basic_gruppe_oppgave_4
+﻿//// <summary>
+//// Main program file that handles user input and command execution.
+//// </summary>
+
+namespace _11_27_csharp_basic_gruppe_oppgave_4
 {
     class Program
     {
@@ -8,41 +12,56 @@
             LsCommand lsCommand = new LsCommand();
             CatCommand catCommand = new CatCommand();
             WcCommand wcCommand = new WcCommand();
+<<<<<<< HEAD
             CpCommand cpCommand = new CpCommand();
+=======
+>>>>>>> 41d38ef10126782a6f44076f58ab4eb543001927
 
             bool exitFlag = false;
 
-            while (!exitFlag)
+            while (!exitFlag) // Main loop to process user commands
             {
-                Console.Write("> ");
+                Console.Write("> "); // Prompt for user input
                 string? input = Console.ReadLine();
 
                 // 1. Input Validation and Early Exit
                 if (string.IsNullOrWhiteSpace(input))
                 {
-                    continue;
+                    continue; // Skip empty input
                 }
 
-                string[] newArgs = input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-                string command = newArgs[0].ToLower();
+                string[] newArgs = input.Split(' ', StringSplitOptions.RemoveEmptyEntries); // Split input into command and arguments
+                string command = newArgs[0].ToLower(); // Extract command
 
                 if (command == "exit")
                 {
                     exitFlag = true;
                     continue; // exit the loop
                 }
+<<<<<<< HEAD
 
                 ProcessCommand(newArgs, touchCommand, lsCommand, catCommand, wcCommand, cpCommand);
             }
         }
 
+=======
+                ProcessCommand(newArgs, touchCommand, lsCommand, catCommand, wcCommand);
+            }
+        }
+
+        //Made this to reduce indentation in Main method
+>>>>>>> 41d38ef10126782a6f44076f58ab4eb543001927
         static void ProcessCommand(
             string[] newArgs,
             TouchCommand touchCommand,
             LsCommand lsCommand,
             CatCommand catCommand,
+<<<<<<< HEAD
             WcCommand wcCommand,
             CpCommand cpCommand
+=======
+            WcCommand wcCommand
+>>>>>>> 41d38ef10126782a6f44076f58ab4eb543001927
         )
         {
             string command = newArgs[0].ToLower();
@@ -69,10 +88,13 @@
                     lsCommand.ls(newArgs);
                     break;
 
+<<<<<<< HEAD
                 case "cp":
                     cpCommand.cp(newArgs[1], newArgs[2]);
                     break;
 
+=======
+>>>>>>> 41d38ef10126782a6f44076f58ab4eb543001927
                 case "cat":
                     if (newArgs.Length > 1)
                     {
