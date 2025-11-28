@@ -4,25 +4,10 @@
     {
         static void Main(string[] args)
         {
-<<<<<<< HEAD
-            
             TouchCommand touchCommand = new TouchCommand();
             LsCommand lsCommand = new LsCommand();
             CatCommand catCommand = new CatCommand();
             WcCommand wcCommand = new WcCommand();
-=======
-            case "touch":
-                touchCommand.Touch(args[1]);
-                break;
-
-            case "pwd":
-                PwdCommand.Pwd();
-                break;
-
-            case "cat":
-                catCommand.Cat(args[1]);
-                break;
->>>>>>> 4bf6f84b08bfa6f924278cae228b2255a48c1b2c
 
             bool exitFlag = false;
 
@@ -45,20 +30,20 @@
                     exitFlag = true;
                     continue; // exit the loop
                 }
-                
+
                 ProcessCommand(newArgs, touchCommand, lsCommand, catCommand, wcCommand);
             }
         }
-        
-        
+
         static void ProcessCommand(
             string[] newArgs,
             TouchCommand touchCommand,
             LsCommand lsCommand,
             CatCommand catCommand,
-            WcCommand wcCommand)
+            WcCommand wcCommand
+        )
         {
-            string command = newArgs[0].ToLower(); 
+            string command = newArgs[0].ToLower();
 
             switch (command)
             {
@@ -74,14 +59,14 @@
                     break;
 
                 case "pwd":
-                    
-                    PwdCommand.Pwd(); 
+
+                    PwdCommand.Pwd();
                     break;
 
                 case "ls":
                     lsCommand.ls(newArgs);
                     break;
-                    
+
                 case "cat":
                     if (newArgs.Length > 1)
                     {
@@ -96,7 +81,6 @@
                 case "rm":
                     if (newArgs.Length > 1)
                     {
-                        
                         RmCommand.Rm(newArgs[1]);
                     }
                     else
