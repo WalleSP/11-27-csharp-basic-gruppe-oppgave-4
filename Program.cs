@@ -10,36 +10,15 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
     {
         static void Main(string[] args)
         {
-            AnsiConsole.MarkupLine(
-                "[blue]_______________________________________________________________________[/]"
-            );
-            AnsiConsole.WriteLine();
-            AnsiConsole.MarkupLine("help:    Shows this menu");
-            AnsiConsole.MarkupLine("pwd:     Shows your current path");
-            AnsiConsole.MarkupLine("ls:      Shows all the files in your current Directory");
-            AnsiConsole.MarkupLine(
-                "echo:    Return your text in the terminal or writes your text into an fil"
-            );
-            AnsiConsole.MarkupLine("cat:     Display the conntent of an file");
-            AnsiConsole.MarkupLine("touch:   Create an file");
-            AnsiConsole.MarkupLine("rm:      Delete an file");
-            AnsiConsole.MarkupLine("mv:      Moves an file or change the name");
-            AnsiConsole.MarkupLine(
-                "Wc:      Shows how much words, lines, bytes and characters the file has"
-            );
-            AnsiConsole.MarkupLine("exit:    Exit the program");
-            AnsiConsole.MarkupLine(
-                "[blue]_______________________________________________________________________[/]"
-            );
-            AnsiConsole.WriteLine();
-            AnsiConsole.MarkupLine("Choose one of the option abow");
-            AnsiConsole.WriteLine();
-
             TouchCommand touchCommand = new TouchCommand();
             LsCommand lsCommand = new LsCommand();
             CatCommand catCommand = new CatCommand();
             WcCommand wcCommand = new WcCommand();
             CpCommand cpCommand = new CpCommand();
+            HelpCommand helpCommand = new HelpCommand();
+
+            TableCommand tableCommand = new TableCommand();
+            tableCommand.table();
 
             bool exitFlag = false;
 
@@ -63,7 +42,15 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
                     continue; // exit the loop
                 }
 
-                ProcessCommand(newArgs, touchCommand, lsCommand, catCommand, wcCommand, cpCommand);
+                ProcessCommand(
+                    newArgs,
+                    touchCommand,
+                    lsCommand,
+                    catCommand,
+                    wcCommand,
+                    cpCommand,
+                    helpCommand
+                );
             }
         }
 
@@ -73,7 +60,8 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
             LsCommand lsCommand,
             CatCommand catCommand,
             WcCommand wcCommand,
-            CpCommand cpCommand
+            CpCommand cpCommand,
+            HelpCommand helpCommand
         )
         {
             string command = newArgs[0].ToLower();
@@ -94,6 +82,10 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
                 case "pwd":
 
                     PwdCommand.Pwd();
+                    break;
+
+                case "help":
+                    helpCommand.help();
                     break;
 
                 case "ls":
