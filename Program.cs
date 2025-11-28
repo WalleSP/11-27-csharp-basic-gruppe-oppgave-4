@@ -19,7 +19,7 @@ class Program
             case "pwd":
                 PwdCommand.Pwd();
                 break;
-            
+
             case "cat":
                 catCommand.Cat(args[1]);
                 break;
