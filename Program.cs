@@ -4,11 +4,25 @@
     {
         static void Main(string[] args)
         {
+<<<<<<< HEAD
             
             TouchCommand touchCommand = new TouchCommand();
             LsCommand lsCommand = new LsCommand();
             CatCommand catCommand = new CatCommand();
             WcCommand wcCommand = new WcCommand();
+=======
+            case "touch":
+                touchCommand.Touch(args[1]);
+                break;
+
+            case "pwd":
+                PwdCommand.Pwd();
+                break;
+
+            case "cat":
+                catCommand.Cat(args[1]);
+                break;
+>>>>>>> 4bf6f84b08bfa6f924278cae228b2255a48c1b2c
 
             bool exitFlag = false;
 
