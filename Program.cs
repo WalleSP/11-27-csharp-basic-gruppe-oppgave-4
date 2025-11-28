@@ -8,6 +8,7 @@
             LsCommand lsCommand = new LsCommand();
             CatCommand catCommand = new CatCommand();
             WcCommand wcCommand = new WcCommand();
+            CpCommand cpCommand = new CpCommand();
 
             bool exitFlag = false;
 
@@ -31,7 +32,7 @@
                     continue; // exit the loop
                 }
 
-                ProcessCommand(newArgs, touchCommand, lsCommand, catCommand, wcCommand);
+                ProcessCommand(newArgs, touchCommand, lsCommand, catCommand, wcCommand, cpCommand);
             }
         }
 
@@ -40,7 +41,8 @@
             TouchCommand touchCommand,
             LsCommand lsCommand,
             CatCommand catCommand,
-            WcCommand wcCommand
+            WcCommand wcCommand,
+            CpCommand cpCommand
         )
         {
             string command = newArgs[0].ToLower();
@@ -65,6 +67,10 @@
 
                 case "ls":
                     lsCommand.ls(newArgs);
+                    break;
+
+                case "cp":
+                    cpCommand.cp(newArgs[1], newArgs[2]);
                     break;
 
                 case "cat":
