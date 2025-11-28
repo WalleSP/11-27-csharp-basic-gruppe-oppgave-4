@@ -1,10 +1,13 @@
-﻿namespace _11_27_csharp_basic_gruppe_oppgave_4
+﻿//// <summary>
+//// Main program file that handles user input and command execution.
+//// </summary>
+
+namespace _11_27_csharp_basic_gruppe_oppgave_4
 {
     class Program
     {
         static void Main(string[] args)
         {
-            
             TouchCommand touchCommand = new TouchCommand();
             LsCommand lsCommand = new LsCommand();
             CatCommand catCommand = new CatCommand();
@@ -12,39 +15,39 @@
 
             bool exitFlag = false;
 
-            while (!exitFlag)
+            while (!exitFlag) // Main loop to process user commands
             {
-                Console.Write("> ");
+                Console.Write("> "); // Prompt for user input
                 string? input = Console.ReadLine();
 
                 // 1. Input Validation and Early Exit
                 if (string.IsNullOrWhiteSpace(input))
                 {
-                    continue;
+                    continue; // Skip empty input
                 }
 
-                string[] newArgs = input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-                string command = newArgs[0].ToLower();
+                string[] newArgs = input.Split(' ', StringSplitOptions.RemoveEmptyEntries); // Split input into command and arguments
+                string command = newArgs[0].ToLower(); // Extract command
 
                 if (command == "exit")
                 {
                     exitFlag = true;
                     continue; // exit the loop
                 }
-                
                 ProcessCommand(newArgs, touchCommand, lsCommand, catCommand, wcCommand);
             }
         }
-        
-        
+
+        //Made this to reduce indentation in Main method
         static void ProcessCommand(
             string[] newArgs,
             TouchCommand touchCommand,
             LsCommand lsCommand,
             CatCommand catCommand,
-            WcCommand wcCommand)
+            WcCommand wcCommand
+        )
         {
-            string command = newArgs[0].ToLower(); 
+            string command = newArgs[0].ToLower();
 
             switch (command)
             {
@@ -60,14 +63,14 @@
                     break;
 
                 case "pwd":
-                    
-                    PwdCommand.Pwd(); 
+
+                    PwdCommand.Pwd();
                     break;
 
                 case "ls":
                     lsCommand.ls(newArgs);
                     break;
-                    
+
                 case "cat":
                     if (newArgs.Length > 1)
                     {
@@ -82,7 +85,6 @@
                 case "rm":
                     if (newArgs.Length > 1)
                     {
-                        
                         RmCommand.Rm(newArgs[1]);
                     }
                     else

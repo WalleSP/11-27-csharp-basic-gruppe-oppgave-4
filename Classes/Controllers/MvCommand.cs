@@ -1,7 +1,4 @@
 public class MwCommands
 {
-    public void Mv()
-    {
-        
-    }
+    public void Mv() { }
 }

@@ -5,7 +5,6 @@ public class CatCommand
 {
     public void Cat(string filePath)
     {
-
         if (!File.Exists(filePath))
         {
             Console.WriteLine("Could not find file.");
@@ -15,6 +14,5 @@ public class CatCommand
             string fileContent = File.ReadAllText(filePath);
             Console.WriteLine(fileContent);
         }
-
     }
 }
