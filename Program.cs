@@ -1,4 +1,6 @@
-﻿//// <summary>
+﻿using Spectre.Console;
+
+/// <summary>
 //// Main program file that handles user input and command execution.
 //// </summary>
 
@@ -13,6 +15,10 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
             CatCommand catCommand = new CatCommand();
             WcCommand wcCommand = new WcCommand();
             CpCommand cpCommand = new CpCommand();
+            HelpCommand helpCommand = new HelpCommand();
+
+            TableCommand tableCommand = new TableCommand();
+            tableCommand.table();
 
             bool exitFlag = false;
 
@@ -36,7 +42,15 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
                     continue; // exit the loop
                 }
 
-                ProcessCommand(newArgs, touchCommand, lsCommand, catCommand, wcCommand, cpCommand);
+                ProcessCommand(
+                    newArgs,
+                    touchCommand,
+                    lsCommand,
+                    catCommand,
+                    wcCommand,
+                    cpCommand,
+                    helpCommand
+                );
             }
         }
 
@@ -46,7 +60,8 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
             LsCommand lsCommand,
             CatCommand catCommand,
             WcCommand wcCommand,
-            CpCommand cpCommand
+            CpCommand cpCommand,
+            HelpCommand helpCommand
         )
         {
             string command = newArgs[0].ToLower();
@@ -67,6 +82,10 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
                 case "pwd":
 
                     PwdCommand.Pwd();
+                    break;
+
+                case "help":
+                    helpCommand.help();
                     break;
 
                 case "ls":
