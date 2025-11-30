@@ -15,6 +15,7 @@ public class TableCommand
         menu.AddRow("help", "Shows this menu");
         menu.AddRow("pwd", "Shows your current path");
         menu.AddRow("ls", "Shows all the files in your current Directory");
+        menu.AddRow("echo", "Prints your text in the terminal or redirects output to a file (> or >>).");
         menu.AddRow("echo", "Return your text in the terminal or writes your text into the fil");
         menu.AddRow("cat", "Display the conntent of the file");
         menu.AddRow("touch", "Create an file");
