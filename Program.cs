@@ -15,6 +15,7 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
             CatCommand catCommand = new CatCommand();
             WcCommand wcCommand = new WcCommand();
             CpCommand cpCommand = new CpCommand();
+            EchoCommand echoCommand = new EchoCommand();
             HelpCommand helpCommand = new HelpCommand();
 
             TableCommand tableCommand = new TableCommand();
@@ -49,6 +50,7 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
                     catCommand,
                     wcCommand,
                     cpCommand,
+                    echoCommand,
                     helpCommand
                 );
             }
@@ -61,6 +63,7 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
             CatCommand catCommand,
             WcCommand wcCommand,
             CpCommand cpCommand,
+            EchoCommand echoCommand,
             HelpCommand helpCommand
         )
         {
@@ -126,6 +129,18 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
                     else
                     {
                         Console.WriteLine("Error: wc requires a file path.");
+                    }
+                    break;
+
+                case "echo":
+
+                    if (newArgs.Length > 0)
+                    {
+                        echoCommand.Echo(newArgs);
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Unknown command: {command}");
                     }
                     break;
 
