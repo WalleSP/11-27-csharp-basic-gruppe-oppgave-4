@@ -1,14 +1,23 @@
 # C# Commands with UNIX style
 
+## Usage:
+
+1. Type `dotnet run` to run code.
+2. A table of available commands will be displayed in terminal.
+3. Type `exit` to quit the program.
+4. Enjoy!
+
 ## Commands implemented:
 
 - `cat`- Reads all text in file
 - `cp` - Copy a file
-- `echo` -
+- `echo` - Prints your text in terminal
+- `help` - Gives a table of commands
 - `ls` - List file
 - `mv` - Move file
 - `pwd` - Prints current directory
 - `rm` - Delete file
+- `tail` - Displays the last 10 lines of file
 - `touch` - Create a file
 - `wc` - Counts lines, words and bytes in file
 
@@ -17,8 +26,9 @@ _Our task is to create functional UNIX style commands in C#._
 
 **Stages:**
 
-1. Create a repository containing the main features using `dotnet new console --use-program-main`
-2. Invite members in repo, pull code to VSC and create branches using `git branch username` and `git checkout username`
-3. Each member creates files with end name `Command.cs` under `Classes/Controllers`.
-4. We then create a `switch/case` statement with the methods from `Controllers` in `Program.cs`.
-5. Wrap them in a `while` loop so that we can continously type commands till user types `exit` in terminal.
+1. Created a new C# console project: `dotnet new console --use-program-main`.
+2. Invited members in repo, cloned the project and created branches using `git branch username` and `git checkout username`.
+3. Each member created files with end name `Command.cs` under `Classes/Controllers`.
+4. In `Program.cs`, we wrote a `switch` statement that reads the user’s input and decides which command to run by calling the correct method from each command class.
+5. Wrap them in a `while` loop so that we can continously type commands until user types `exit` in terminal.
+6. Using `Spectre.Console`, we create a table that displays the different commands to the user.
