@@ -146,13 +146,13 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
                         Console.WriteLine($"Unknown command: {command}");
                     }
                     break;
-                
+
                 case "tail":
                     if (newArgs.Length > 1)
                     {
                         tailCommand.Tail(newArgs[1]);
                     }
-                    else 
+                    else
                     {
                         Console.WriteLine("Error: tail requires a filepath");
                     }
