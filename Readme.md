@@ -4,6 +4,7 @@
 
 - `cat`- Reads all text in file
 - `cp` - Copy a file
+- `echo` -
 - `ls` - List file
 - `mv` - Move file
 - `pwd` - Prints current directory

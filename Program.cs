@@ -17,6 +17,7 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
             CpCommand cpCommand = new CpCommand();
             EchoCommand echoCommand = new EchoCommand();
             HelpCommand helpCommand = new HelpCommand();
+            TailCommand tailCommand = new TailCommand();
 
             TableCommand tableCommand = new TableCommand();
             tableCommand.table();
@@ -51,7 +52,8 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
                     wcCommand,
                     cpCommand,
                     echoCommand,
-                    helpCommand
+                    helpCommand,
+                    tailCommand
                 );
             }
         }
@@ -64,7 +66,8 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
             WcCommand wcCommand,
             CpCommand cpCommand,
             EchoCommand echoCommand,
-            HelpCommand helpCommand
+            HelpCommand helpCommand,
+            TailCommand tailCommand
         )
         {
             string command = newArgs[0].ToLower();
@@ -141,6 +144,17 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
                     else
                     {
                         Console.WriteLine($"Unknown command: {command}");
+                    }
+                    break;
+                
+                case "tail":
+                    if (newArgs.Length > 1)
+                    {
+                        tailCommand.Tail(newArgs[1]);
+                    }
+                    else 
+                    {
+                        Console.WriteLine("Error: tail requires a filepath");
                     }
                     break;
 
