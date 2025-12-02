@@ -28,5 +28,5 @@ public static class RmCommand
                 Console.WriteLine($"There is no file with the name {name}");
             }
         }
-    }
+  }
 }

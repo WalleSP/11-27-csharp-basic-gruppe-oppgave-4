@@ -10,16 +10,17 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
     {
         static void Main(string[] args)
         {
-            TouchCommand touchCommand = new TouchCommand();
-            LsCommand lsCommand = new LsCommand();
-            CatCommand catCommand = new CatCommand();
-            WcCommand wcCommand = new WcCommand();
-            CpCommand cpCommand = new CpCommand();
-            EchoCommand echoCommand = new EchoCommand();
-            HelpCommand helpCommand = new HelpCommand();
-            TailCommand tailCommand = new TailCommand();
+            var touchCommand = new TouchCommand();
+            var lsCommand = new LsCommand();
+            var catCommand = new CatCommand();
+            var wcCommand = new WcCommand();
+            var cpCommand = new CpCommand();
+            var echoCommand = new EchoCommand();
+            var helpCommand = new HelpCommand();
+            var tailCommand = new TailCommand();
+            var mkdirCommand = new MkdirCommand();
 
-            TableCommand tableCommand = new TableCommand();
+            var tableCommand = new TableCommand();
             tableCommand.table();
 
             bool exitFlag = false;
@@ -53,6 +54,7 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
                     cpCommand,
                     echoCommand,
                     helpCommand,
+                    mkdirCommand,
                     tailCommand
                 );
             }
@@ -67,6 +69,7 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
             CpCommand cpCommand,
             EchoCommand echoCommand,
             HelpCommand helpCommand,
+            MkdirCommand mkdirCommand,
             TailCommand tailCommand
         )
         {
@@ -152,6 +155,10 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
                     {
                         Console.WriteLine($"Unknown command: {command}");
                     }
+                    break;
+
+                case "mkdir":
+                    mkdirCommand.Mkdir(newArgs);
                     break;
 
                 case "tail":

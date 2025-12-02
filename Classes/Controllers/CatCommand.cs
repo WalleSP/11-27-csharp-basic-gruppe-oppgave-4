@@ -3,16 +3,16 @@
 /// </summary>
 public class CatCommand
 {
-    public void Cat(string filePath)
+  public void Cat(string filePath)
+  {
+    if (!File.Exists(filePath))
     {
-        if (!File.Exists(filePath))
-        {
-            Console.WriteLine("Could not find file.");
-        }
-        else
-        {
-            string fileContent = File.ReadAllText(filePath);
-            Console.WriteLine(fileContent);
-        }
+      Console.WriteLine("Could not find file.");
     }
+    else
+    {
+      string fileContent = File.ReadAllText(filePath);
+      Console.WriteLine(fileContent);
+    }
+  }
 }
