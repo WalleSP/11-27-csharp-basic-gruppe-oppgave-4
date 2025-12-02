@@ -10,12 +10,12 @@ public class MkdirCommand
             return;
         }
 
-        string[] dirNameParts = newArgs.Skip(1).ToArray();
-        string dirName = string.Join(" ", dirNameParts);
+        string[] dirNameParts = newArgs.Skip(1).ToArray(); // Skip the command itself
+        string dirName = string.Join(" ", dirNameParts); // Join the remaining parts to form the directory name
 
         try
         {
-            Directory.CreateDirectory(dirName);
+            Directory.CreateDirectory(dirName); // Create the directory
             Console.WriteLine($"Directory '{dirName}' created successfully.");
         }
         catch (Exception ex)
