@@ -7,16 +7,16 @@
 3. Type `exit` to quit the program.
 4. Enjoy!
 
-## Commands implemented:
+## Commands implemented with arguments:
 
 - `cat`- Reads all text in file
 - `cp` - Copy a file
-- `echo` - Prints your text in terminal
+- `echo` - Prints your text in terminal (>, >>)
 - `help` - Gives a table of commands
-- `ls` - List file
+- `ls` - List file (-l)
 - `mv` - Move file
 - `pwd` - Prints current directory
-- `rm` - Delete file
+- `rm` - Delete file (-r)
 - `tail` - Displays the last 10 lines of file
 - `touch` - Create a file
 - `wc` - Counts lines, words and bytes in file
