@@ -24,6 +24,14 @@
 _This task is a group oriented project where each of us creates a branch and commits to main._
 _Our task is to create functional UNIX style commands in C#._
 
+## Our team:
+
+- https://github.com/hro1025
+- https://github.com/WalleSP
+- https://github.com/Henning-1025
+- https://github.com/Maxkodehode
+
+
 **Stages:**
 
 1. Created a new C# console project: `dotnet new console --use-program-main`.
