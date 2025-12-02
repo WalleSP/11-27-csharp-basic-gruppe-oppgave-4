@@ -11,6 +11,7 @@ public static class RmCommand
             if (Directory.Exists(file))
             {
                 Directory.Delete(file, true);
+                Console.WriteLine($"Directory '{file}' successfully Deleted");
             }
             else
             {
@@ -28,5 +29,5 @@ public static class RmCommand
                 Console.WriteLine($"There is no file with the name {name}");
             }
         }
-  }
+    }
 }
