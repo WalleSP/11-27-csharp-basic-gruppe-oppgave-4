@@ -4,22 +4,17 @@ public static class RmCommand
 {
     public static void Rm(string newArgs, string name)
     {
-        var directoryName = Path.GetDirectoryName(newArgs);
         var file = Path.Combine(Directory.GetCurrentDirectory(), name);
 
         if (newArgs.Contains("-r"))
         {
+            if (Directory.Exists(file))
             {
-                Console.WriteLine("Invalid path");
-            }
-
-            if (Directory.Exists(directoryName))
-            {
-                Directory.Delete(directoryName, true);
+                Directory.Delete(file, true);
             }
             else
             {
-                Console.WriteLine($"The directory {directoryName} allready exists");
+                Console.WriteLine($"The directory {file} allready exists");
             }
         }
         else

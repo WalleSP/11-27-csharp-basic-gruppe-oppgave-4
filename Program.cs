@@ -95,7 +95,7 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
                     break;
 
                 case "ls":
-                    lsCommand.ls(newArgs[1]);
+                    lsCommand.ls(newArgs);
                     break;
 
                 case "cp":
@@ -116,7 +116,14 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
                 case "rm":
                     if (newArgs.Length > 1)
                     {
-                        RmCommand.Rm(newArgs[1], newArgs[2]);
+                        if (newArgs.Contains("-r"))
+                        {
+                            RmCommand.Rm(newArgs[1], newArgs[2]);
+                        }
+                        else
+                        {
+                            RmCommand.Rm("", newArgs[1]);
+                        }
                     }
                     else
                     {
