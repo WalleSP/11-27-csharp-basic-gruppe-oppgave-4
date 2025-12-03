@@ -22,6 +22,7 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
             var tailCommand = new TailCommand();
             var mkdirCommand = new MkdirCommand();
             var mvCommand = new MvCommand();
+            var cdCommand = new CdCommand();
 
             var tableCommand = new TableCommand();
             tableCommand.table();
@@ -199,6 +200,10 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
                     {
                         Console.WriteLine("Error: tail requires a filepath");
                     }
+                    break;
+
+                case "cd":
+                    cdCommand.Cd(newArgs);
                     break;
 
                 default:

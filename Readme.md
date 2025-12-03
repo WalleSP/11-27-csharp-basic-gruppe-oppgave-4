@@ -10,7 +10,7 @@
 ## Commands implemented with arguments:
 
 - `cat`- Reads all text in file
-- `cp` - Copy a file
+- `cp` - Copy a file (-r)
 - `echo` - Prints your text in terminal (>, >>)
 - `help` - Gives a table of commands
 - `ls` - List file (-l)
@@ -22,6 +22,7 @@
 - `tail` - Displays last 10 lines of file
 - `touch` - Create a file
 - `wc` - Counts lines, words and bytes in file
+- `cd`- Change current directory to the one specified
 
 _This task is a group oriented project where each of us creates a branch and commits to main._
 _Our task is to create functional UNIX style commands in C#._

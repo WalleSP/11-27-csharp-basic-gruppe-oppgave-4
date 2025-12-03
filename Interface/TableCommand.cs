@@ -19,6 +19,7 @@ public class TableCommand
             "ls",
             "Shows all the files in your current directory.\nUse 'ls -l' to show more details."
         );
+        menu.AddRow("cd", "Change your current directory to the one you specify.");
         menu.AddRow(
             "echo",
             "Prints your text in the terminal or an file.\nUse > or >> to redirect output to a file."
