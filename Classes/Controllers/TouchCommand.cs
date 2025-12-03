@@ -1,6 +1,6 @@
 using System.Collections;
 
-namespace _11_27_csharp_basic_gruppe_oppgave_4.Classes.Controllers;
+namespace _11_27_csharp_basic_gruppe_oppgave_4;
 
     /// <summary>
     /// Touch command from UNIX that creates a new file.
