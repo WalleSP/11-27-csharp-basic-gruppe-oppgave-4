@@ -12,7 +12,9 @@ public class WcCommand
                 .Split(new char[] { ' ', '\t', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries)
                 .Length;
             long bytes = new FileInfo(filePath).Length;
-            Console.WriteLine($"\t{lines}\t{words}\t{bytes}\t{filePath}");
+            Console.WriteLine(
+                $"\tLines:[{lines}]\tWords:[{words}]\tBytes:[{bytes}]\tFilePath:[{filePath}]"
+            );
         }
         else
         {

@@ -1,4 +1,5 @@
-﻿using Spectre.Console;
+﻿using _11_27_csharp_basic_gruppe_oppgave_4.Classes;
+using Spectre.Console;
 
 /// <summary>
 //// Main program file that handles user input and command execution.
@@ -17,6 +18,7 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
             var cpCommand = new CpCommand();
             var echoCommand = new EchoCommand();
             var helpCommand = new HelpCommand();
+            var headCommand = new HeadCommand();
             var tailCommand = new TailCommand();
             var mkdirCommand = new MkdirCommand();
             var mvCommand = new MvCommand();
@@ -73,7 +75,7 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
             HelpCommand helpCommand,
             MkdirCommand mkdirCommand,
             TailCommand tailCommand,
-            MvCommand mvCommands
+            MvCommand mvCommand
         )
         {
             string command = newArgs[0].ToLower();
@@ -177,6 +179,17 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
 
                 case "mkdir":
                     mkdirCommand.Mkdir(newArgs);
+                    break;
+
+                case "head":
+                    if (newArgs.Length > 1)
+                    {
+                        HeadCommand.Head(newArgs[1]);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error: head requires a filepath");
+                    }
                     break;
 
                 case "tail":
