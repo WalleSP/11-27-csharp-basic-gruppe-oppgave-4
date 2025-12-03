@@ -2,7 +2,7 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4.Classes;
 
 public class HeadCommand
 {
-    public static void Tail(string FilePath)
+    public static void Head(string FilePath)
     {
         if (File.Exists(FilePath))
         {
