@@ -22,6 +22,7 @@
 - `tail` - Displays last 10 lines of file
 - `touch` - Create a file
 - `wc` - Counts lines, words and bytes in file
+- `cd`- Change current directory to the one specified
 
 _This task is a group oriented project where each of us creates a branch and commits to main._
 _Our task is to create functional UNIX style commands in C#._
