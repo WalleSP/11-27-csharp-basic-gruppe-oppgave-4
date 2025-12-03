@@ -58,8 +58,7 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
                     echoCommand,
                     helpCommand,
                     mkdirCommand,
-                    tailCommand,
-                    mvCommand
+                    tailCommand
                 );
             }
         }
@@ -74,8 +73,7 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
             EchoCommand echoCommand,
             HelpCommand helpCommand,
             MkdirCommand mkdirCommand,
-            TailCommand tailCommand,
-            MvCommand mvCommand
+            TailCommand tailCommand
         )
         {
             string command = newArgs[0].ToLower();
