@@ -1,6 +1,6 @@
-public class MwCommands
+public class MvCommand
 {
-    public void Mv(string fileName, string filePath)
+    public static void Mv(string fileName, string filePath)
     {
         File.Move(fileName, filePath);
     }
