@@ -17,6 +17,5 @@ public class HeadCommand
         {
             Console.WriteLine("File not found.");
         }
-
     }
 }

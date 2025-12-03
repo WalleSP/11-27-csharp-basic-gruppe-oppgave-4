@@ -14,10 +14,12 @@
 - `echo` - Prints your text in terminal (>, >>)
 - `help` - Gives a table of commands
 - `ls` - List file (-l)
+- `mkdir` - Create new directory
 - `mv` - Move file
 - `pwd` - Prints current directory
 - `rm` - Delete file (-r)
-- `tail` - Displays the last 10 lines of file
+- `head` - Display first 10 lines of file
+- `tail` - Displays last 10 lines of file
 - `touch` - Create a file
 - `wc` - Counts lines, words and bytes in file
 
@@ -30,7 +32,6 @@ _Our task is to create functional UNIX style commands in C#._
 - https://github.com/WalleSP
 - https://github.com/Henning-1025
 - https://github.com/Maxkodehode
-
 
 **Stages:**
 
