@@ -21,6 +21,7 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
             var headCommand = new HeadCommand();
             var tailCommand = new TailCommand();
             var mkdirCommand = new MkdirCommand();
+            var mvCommand = new MvCommand();
 
             var tableCommand = new TableCommand();
             tableCommand.table();
@@ -57,8 +58,8 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
                     echoCommand,
                     helpCommand,
                     mkdirCommand,
-                    headCommand,
-                    tailCommand
+                    tailCommand,
+                    mvCommand
                 );
             }
         }
@@ -73,8 +74,8 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
             EchoCommand echoCommand,
             HelpCommand helpCommand,
             MkdirCommand mkdirCommand,
-            HeadCommand headCommand,
-            TailCommand tailCommand
+            TailCommand tailCommand,
+            MvCommand mvCommand
         )
         {
             string command = newArgs[0].ToLower();
@@ -97,6 +98,10 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
                     PwdCommand.Pwd();
                     break;
 
+                case "mv":
+                    MvCommand.Mv(newArgs[1], newArgs[2]);
+                    break;
+
                 case "help":
                     helpCommand.help();
                     break;
@@ -106,7 +111,18 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
                     break;
 
                 case "cp":
-                    cpCommand.cp(newArgs[1], newArgs[2]);
+                    if (newArgs.Length >= 4)
+                    {
+                        cpCommand.cp(newArgs[1], newArgs[2], newArgs[3]);
+                    }
+                    else if (newArgs.Length == 3)
+                    {
+                        cpCommand.cp("", newArgs[1], newArgs[2]);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Usage: cp [-r] source destination");
+                    }
                     break;
 
                 case "cat":
@@ -164,7 +180,7 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
                 case "mkdir":
                     mkdirCommand.Mkdir(newArgs);
                     break;
-                
+
                 case "head":
                     if (newArgs.Length > 1)
                     {

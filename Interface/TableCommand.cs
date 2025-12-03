@@ -28,7 +28,8 @@ public class TableCommand
         menu.AddRow("tail", "Display last 10 lines of file.");
         menu.AddRow("touch", "Create an file.");
         menu.AddRow("rm", "Delete an file.\nUse -r to delete a directory with the files inside.");
-        menu.AddRow("mv", "Moves an file or change the name.");
+        menu.AddRow("cp", "Copy an file\nUse -r to copy an directory.");
+        menu.AddRow("mv", "change the name of the file.");
         menu.AddRow("wc", "Shows how much words, lines, bytes and characters the file has.");
         menu.AddRow("mkdir", "Create an directory.");
         menu.AddRow("exit", "Exit the program.");
