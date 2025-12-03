@@ -24,6 +24,7 @@ public class TableCommand
             "Prints your text in the terminal or an file.\nUse > or >> to redirect output to a file."
         );
         menu.AddRow("cat", "Display the conntent of the file.");
+        menu.AddRow("head", "Display first 10 lines of file.");
         menu.AddRow("tail", "Display last 10 lines of file.");
         menu.AddRow("touch", "Create an file.");
         menu.AddRow("rm", "Delete an file.\nUse -r to delete a directory with the files inside.");
