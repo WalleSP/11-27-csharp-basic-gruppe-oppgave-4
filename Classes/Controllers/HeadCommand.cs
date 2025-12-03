@@ -1,14 +1,14 @@
 namespace _11_27_csharp_basic_gruppe_oppgave_4.Classes.Controllers;
 
-public class TailCommand
+public class HeadCommand
 {
-    public void Tail(string filePath)
+    public static void Tail(string FilePath)
     {
-        if (File.Exists(filePath))
+        if (File.Exists(FilePath))
         {
-            IEnumerable<string> lastLines = File.ReadLines(filePath).Reverse().Take(10).Reverse();
+            IEnumerable<string> firstLines = File.ReadLines(FilePath).Take(10);
 
-            foreach (var lines in lastLines)
+            foreach (var lines in firstLines)
             {
                 Console.WriteLine(lines);
             }
@@ -17,5 +17,6 @@ public class TailCommand
         {
             Console.WriteLine("File not found.");
         }
+
     }
 }
