@@ -10,7 +10,7 @@
 ## Commands implemented with arguments:
 
 - `cat`- Reads all text in file
-- `cp` - Copy a file
+- `cp` - Copy a file (-r)
 - `echo` - Prints your text in terminal (>, >>)
 - `help` - Gives a table of commands
 - `ls` - List file (-l)
