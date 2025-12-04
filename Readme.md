@@ -43,3 +43,11 @@ _Our task is to create functional UNIX style commands in C#._
 5. Wrap them in a `while` loop so that we can continously type commands until user types `exit` in terminal.
 6. Using `Spectre.Console`, we create a table that displays the different commands to the user.
 7. The `switch` statement got moved to it's own file `CommandExecute.cs` to clean up `Program.cs`.
+
+**What we could have done better**
+
+1. Project Planning and Scope Management: We should have allocated more time to defining the complete project scope and necessary functionalities before implementation began. A more detailed initial plan would have resulted in a clearer vision for the final program.
+
+2. Role and Responsibility Delegation: The workload and technical areas of responsibility were not clearly delegated among group members. A clearer distribution of ownership for specific modules would improve efficiency.
+
+3. Leveraging Collaboration Tools: We should have made more comprehensive use of GitHub’s built-in project management features, such as Issues and Project Boards (Kanban), for better progress and task tracking.
