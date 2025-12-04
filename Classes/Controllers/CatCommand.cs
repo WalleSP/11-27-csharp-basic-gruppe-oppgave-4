@@ -1,19 +1,16 @@
 namespace _11_27_csharp_basic_gruppe_oppgave_4;
 
-/// <summary>
-/// Cat command from UNIX that reads all text from file.
-/// </summary>
 public class CatCommand
 {
     public void Cat(string filePath)
     {
-        if (!File.Exists(filePath))
+        if (!File.Exists(filePath)) //Checks if file provided by filepath exist
         {
             Console.WriteLine("Could not find file.");
         }
         else
         {
-            string fileContent = File.ReadAllText(filePath);
+            string fileContent = File.ReadAllText(filePath); //If the file exist, it reads and write the content of the file to the terminal
             Console.WriteLine(fileContent);
         }
     }

@@ -4,7 +4,7 @@ public class WcCommand
 {
     public void Wc(string filePath)
     {
-        if (File.Exists(filePath))
+        if (File.Exists(filePath)) // If file exitst it Counts line, words and bytes and writes it in the terminal
         {
             string content = File.ReadAllText(filePath);
             int lines = File.ReadAllLines(filePath).Length;

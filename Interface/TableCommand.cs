@@ -7,7 +7,7 @@ public class TableCommand
 {
     public void table()
     {
-        var menu = new Table().Border(TableBorder.Rounded);
+        var menu = new Table().Border(TableBorder.Rounded); // Creates an manu with two columns
         Console.WriteLine();
         menu.ShowRowSeparators();
         menu.Title("C# Goats");
