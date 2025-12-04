@@ -6,14 +6,15 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             var tableCommand = new TableCommand();
             tableCommand.table();
 
             bool exitFlag = false;
 
-            while (!exitFlag) // Main loop to process user commands
+            // Main loop to process user commands
+            while (!exitFlag)
             {
                 Console.Write("> "); // Prompt for user input
                 string? input = Console.ReadLine();
@@ -33,7 +34,7 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
                     continue; // exit the loop
                 }
 
-                CommandExecute.ProcessCommand(newArgs);
+                CommandExecute.ProcessCommand(newArgs, command);
             }
         }
     }
