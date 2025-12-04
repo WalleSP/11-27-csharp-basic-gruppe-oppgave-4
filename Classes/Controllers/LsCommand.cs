@@ -4,10 +4,11 @@ public class LsCommand
 {
     public static void ls(string[] newArgs)
     {
+        //Set the different values
         string path = Environment.CurrentDirectory;
         var info = new DirectoryInfo(path);
 
-        if (newArgs.Contains("-l"))
+        if (newArgs.Contains("-l")) // If the newArgs contains '-l' then will the program show alls files with more info
         {
             foreach (var file in info.GetFiles())
             {

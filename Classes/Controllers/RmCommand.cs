@@ -4,9 +4,9 @@ public static class RmCommand
 {
     public static void Rm(string newArgs, string name)
     {
-        var file = Path.Combine(Directory.GetCurrentDirectory(), name);
+        var file = Path.Combine(Directory.GetCurrentDirectory(), name); //Combines the path with the name
 
-        if (newArgs.Contains("-r"))
+        if (newArgs.Contains("-r")) // If newArgs contains 'r' then the program deletes the directory if it exist
         {
             if (Directory.Exists(file))
             {
@@ -15,12 +15,12 @@ public static class RmCommand
             }
             else
             {
-                Console.WriteLine($"The directory {file} allready exists");
+                Console.WriteLine($"The directory {file} dont exists");
             }
         }
         else
         {
-            if (File.Exists(file))
+            if (File.Exists(file)) // Deletes the file when it exist
             {
                 File.Delete(file);
             }

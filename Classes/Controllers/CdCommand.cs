@@ -16,12 +16,12 @@ public class CdCommand
             return;
         }
 
-        string[] pathInput = newArgs.Skip(1).ToArray(); // Skip the command itself
-        string newPath = string.Join(" ", pathInput); // Join the remaining parts to form the directory name
+        string[] pathInput = newArgs.Skip(1).ToArray(); //Skip the command itself
+        string newPath = string.Join(" ", pathInput); //Join the remaining parts to form the directory name
 
         try
         {
-            Directory.SetCurrentDirectory(newPath); // Change the current directory
+            Directory.SetCurrentDirectory(newPath); //Change the current directory
         }
         catch (Exception ex)
         {

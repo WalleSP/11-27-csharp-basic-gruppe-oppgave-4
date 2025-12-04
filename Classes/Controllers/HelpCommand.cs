@@ -4,8 +4,8 @@ public class HelpCommand
 {
     public static void help()
     {
-        TableCommand tableCommand = new TableCommand();
+        // Get the help menu if the user write help
         Console.Clear();
-        tableCommand.table();
+        TableCommand.table();
     }
 }

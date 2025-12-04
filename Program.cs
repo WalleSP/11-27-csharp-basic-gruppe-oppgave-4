@@ -1,7 +1,11 @@
-﻿using _11_27_csharp_basic_gruppe_oppgave_4;
-
-var tableCommand = new TableCommand();
-tableCommand.table();
+namespace _11_27_csharp_basic_gruppe_oppgave_4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var tableCommand = new TableCommand();
+            TableCommand.table();
 
 bool exitFlag = false;
 
