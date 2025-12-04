@@ -2,9 +2,9 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4;
 
 public class CdCommand
 {
-    public void Cd(string[] newArgs)
+    public static void Cd(string[] newArgs)
     {
-        if (newArgs.Length < 2)
+        if (newArgs.Length < 2) // Check if a directory name is provided
         {
             Console.WriteLine(
                 "Error: 'cd' command requires a directory name.\n"
@@ -27,6 +27,6 @@ public class CdCommand
         {
             Console.WriteLine($"Error changing directory to '{newPath}': {ex.Message}");
         }
-        PwdCommand.Pwd();
+        PwdCommand.Pwd(); // Display the new current directory
     }
 }

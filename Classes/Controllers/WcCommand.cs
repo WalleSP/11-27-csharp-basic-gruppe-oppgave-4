@@ -2,7 +2,7 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4;
 
 public class WcCommand
 {
-    public void Wc(string filePath)
+    public static void Wc(string filePath)
     {
         if (File.Exists(filePath)) // If file exitst it Counts line, words and bytes and writes it in the terminal
         {
