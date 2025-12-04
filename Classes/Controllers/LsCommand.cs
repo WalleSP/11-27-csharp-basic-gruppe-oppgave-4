@@ -2,7 +2,7 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4;
 
 public class LsCommand
 {
-    public void ls(string[] newArgs)
+    public static void ls(string[] newArgs)
     {
         //Set the different values
         string path = Environment.CurrentDirectory;
