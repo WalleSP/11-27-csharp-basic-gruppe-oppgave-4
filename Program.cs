@@ -1,41 +1,30 @@
-﻿/// <summary>
-//// Main program file that handles user input and command execution.
-//// </summary>
+﻿using _11_27_csharp_basic_gruppe_oppgave_4;
 
-namespace _11_27_csharp_basic_gruppe_oppgave_4
+var tableCommand = new TableCommand();
+tableCommand.table();
+
+bool exitFlag = false;
+
+// Main loop to process user commands
+while (!exitFlag)
 {
-    class Program
+    Console.Write("> "); // Prompt for user input
+    string? input = Console.ReadLine();
+
+    // 1. Input Validation and Early Exit
+    if (string.IsNullOrWhiteSpace(input))
     {
-        static void Main()
-        {
-            var tableCommand = new TableCommand();
-            tableCommand.table();
-
-            bool exitFlag = false;
-
-            // Main loop to process user commands
-            while (!exitFlag)
-            {
-                Console.Write("> "); // Prompt for user input
-                string? input = Console.ReadLine();
-
-                // 1. Input Validation and Early Exit
-                if (string.IsNullOrWhiteSpace(input))
-                {
-                    continue; // Skip empty input
-                }
-
-                string[] newArgs = input.Split(' ', StringSplitOptions.RemoveEmptyEntries); // Split input into command and arguments
-                string command = newArgs[0].ToLower(); // Extract command
-
-                if (command == "exit")
-                {
-                    exitFlag = true;
-                    continue; // exit the loop
-                }
-
-                CommandExecute.ProcessCommand(newArgs, command);
-            }
-        }
+        continue; // Skip empty input
     }
+
+    string[] newArgs = input.Split(' ', StringSplitOptions.RemoveEmptyEntries); // Split input into command and arguments
+    string command = newArgs[0].ToLower(); // Extract command
+
+    if (command == "exit")
+    {
+        exitFlag = true;
+        continue; // exit the loop
+    }
+
+    CommandExecute.ProcessCommand(newArgs, command);
 }
