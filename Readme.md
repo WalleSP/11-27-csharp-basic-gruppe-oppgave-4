@@ -42,3 +42,4 @@ _Our task is to create functional UNIX style commands in C#._
 4. In `Program.cs`, we wrote a `switch` statement that reads the user’s input and decides which command to run by calling the correct method from each command class.
 5. Wrap them in a `while` loop so that we can continously type commands until user types `exit` in terminal.
 6. Using `Spectre.Console`, we create a table that displays the different commands to the user.
+7. The `switch` statement got moved to it's own file `CommandExecute.cs` to clean up `Program.cs`.

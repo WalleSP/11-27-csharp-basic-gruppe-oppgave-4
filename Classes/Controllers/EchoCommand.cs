@@ -2,13 +2,8 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4;
 
 public class EchoCommand
 {
-    public static void Echo(string[] newArgs)
+    public static void Echo(string[] newArgs) // Handles the echo command with optional redirection
     {
-        if (newArgs.Length == 0)
-        {
-            return;
-        }
-
         var argsWithoutCommand = newArgs.Skip(1);
 
         int overWriteSymbolIndex = Array.IndexOf(newArgs, ">");
