@@ -5,7 +5,7 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4;
 
 public class CpCommand
 {
-    public void cp(string newArgs, string sourceName, string destName)
+    public static void cp(string newArgs, string sourceName, string destName)
     {
         var finalDest = destName;
 

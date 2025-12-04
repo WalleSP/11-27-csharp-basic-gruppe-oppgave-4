@@ -2,7 +2,7 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4;
 
 public class EchoCommand
 {
-    public void Echo(string[] newArgs)
+    public static void Echo(string[] newArgs)
     {
         if (newArgs.Length == 0)
         {
