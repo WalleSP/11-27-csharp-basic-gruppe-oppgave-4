@@ -2,10 +2,8 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4;
 
 public class CommandExecute
 {
-    public static void ProcessCommand(string[] newArgs)
+    public static void ProcessCommand(string[] newArgs, string command)
     {
-        string command = newArgs[0].ToLower();
-
         switch (command)
         {
             case "touch":
