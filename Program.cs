@@ -9,7 +9,7 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4
         static void Main(string[] args)
         {
             var tableCommand = new TableCommand();
-            tableCommand.table();
+            TableCommand.table();
 
             bool exitFlag = false;
 
