@@ -2,7 +2,7 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4;
 
 public class TailCommand
 {
-    public void Tail(string filePath)
+    public static void Tail(string filePath)
     {
         if (File.Exists(filePath))
         {

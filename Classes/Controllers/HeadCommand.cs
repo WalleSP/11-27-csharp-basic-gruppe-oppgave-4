@@ -1,4 +1,4 @@
-namespace _11_27_csharp_basic_gruppe_oppgave_4.Classes;
+namespace _11_27_csharp_basic_gruppe_oppgave_4;
 
 public class HeadCommand
 {

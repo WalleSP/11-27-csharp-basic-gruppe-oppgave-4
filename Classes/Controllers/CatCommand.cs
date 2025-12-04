@@ -5,7 +5,7 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4;
 /// </summary>
 public class CatCommand
 {
-    public void Cat(string filePath)
+    public static void Cat(string filePath)
     {
         if (!File.Exists(filePath))
         {

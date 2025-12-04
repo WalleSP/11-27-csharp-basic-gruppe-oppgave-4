@@ -2,9 +2,9 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4;
 
 public class MkdirCommand
 {
-    public void Mkdir(string[] newArgs)
+    public static void Mkdir(string[] newArgs)
     {
-        if (newArgs.Length < 2)
+        if (newArgs.Length < 2) // Check if a directory name is provided
         {
             Console.WriteLine("Error: 'mkdir' command requires a directory name.");
             return;
