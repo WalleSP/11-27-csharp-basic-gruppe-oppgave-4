@@ -2,14 +2,11 @@ using System.Collections;
 
 namespace _11_27_csharp_basic_gruppe_oppgave_4;
 
-/// <summary>
-/// Touch command from UNIX that creates a new file.
-/// </summary>
 public class TouchCommand
 {
-    public static void Touch(string filePath)
+    public void Touch(string filePath)
     {
-        if (File.Exists(filePath))
+        if (File.Exists(filePath)) // Checks if the file exist and if not then creates it
         {
             Console.WriteLine("File already Exists");
         }

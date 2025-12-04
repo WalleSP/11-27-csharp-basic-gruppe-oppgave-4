@@ -4,7 +4,7 @@ public class HeadCommand
 {
     public static void Head(string FilePath)
     {
-        if (File.Exists(FilePath))
+        if (File.Exists(FilePath)) // Checks if the file exist if yes then writes the 10 first lines into the terminal
         {
             IEnumerable<string> firstLines = File.ReadLines(FilePath).Take(10);
 
@@ -15,7 +15,7 @@ public class HeadCommand
         }
         else
         {
-            Console.WriteLine("File not found.");
+            Console.WriteLine($"File '{FilePath}' not found.");
         }
     }
 }

@@ -4,7 +4,7 @@ public class TailCommand
 {
     public static void Tail(string filePath)
     {
-        if (File.Exists(filePath))
+        if (File.Exists(filePath)) // If the file exist it read the last lines of the file and gives output to the user
         {
             IEnumerable<string> lastLines = File.ReadLines(filePath).Reverse().Take(10).Reverse();
 
@@ -15,7 +15,7 @@ public class TailCommand
         }
         else
         {
-            Console.WriteLine("File not found.");
+            Console.WriteLine($"File '{filePath}' not found.");
         }
     }
 }
