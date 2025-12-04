@@ -5,7 +5,7 @@ namespace _11_27_csharp_basic_gruppe_oppgave_4;
 
 public class CpCommand
 {
-    public void cp(string newArgs, string sourceName, string destName) // Gets the different info by the user
+    public static void cp(string newArgs, string sourceName, string destName) // Gets the different info by the user
     {
         var finalDest = destName;
 
